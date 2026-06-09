@@ -1248,7 +1248,10 @@
         <!-- Floating Controls Panel -->
         <div class="deck-controls">
             <button class="deck-nav-btn" id="prevBtn" title="Previous Slide (ArrowLeft)">←</button>
-            <span class="deck-page-indicator"><span id="pageNum" contenteditable="true" title="Click to enter page number" style="outline: none; border-bottom: 1px dashed var(--accent-red); cursor: text; padding: 0 4px; display: inline-block; min-width: 20px; text-align: center;">1</span> / 24</span>
+            <span class="deck-page-indicator"><span id="pageNum" contenteditable="true"
+                    title="Click to enter page number"
+                    style="outline: none; border-bottom: 1px dashed var(--accent-red); cursor: text; padding: 0 4px; display: inline-block; min-width: 20px; text-align: center;">1</span>
+                / 24</span>
             <button class="deck-nav-btn" id="nextBtn" title="Next Slide (ArrowRight)">→</button>
             <span style="color: var(--card-border); margin: 0 4px;">|</span>
             <button class="deck-nav-btn" id="toggleEditBtn"
@@ -1282,8 +1285,8 @@
                 <div class="title-slide-footer reveal">
                     <div class="title-slide-speakers">
                         <div class="title-slide-name editable" id="text-s1-author">You Peng & Swee-Teng Chin</div>
-                        <div class="title-slide-org editable" id="text-s1-affiliation">Dow Chemical Company &bull;
-                            Process Systems Engineering</div>
+                        <div class="title-slide-org editable" id="text-s1-affiliation">The Dow Chemical Company &bull;
+                            ChemAI & Stats, OTEC</div>
                     </div>
                     <div class="logo-box" style="display:flex; justify-content:flex-end;">
                         <img src="assets/logo.png" alt="Dow Logo" style="max-height: 52px;">
@@ -3987,79 +3990,225 @@
                     <p class="slide-subtitle editable" id="text-s19-subtitle">GenAI is most valuable when it translates
                         messy qualitative context into structured, model-ready inputs</p>
                 </div>
-                <div class="slide-body" style="flex-direction: column; overflow: visible; gap: 16px; margin-bottom: 10px;">
-                    <div class="grid-3col resizable" id="grid-s19" style="width: 100%; height: auto; gap: 24px;">
-                        
-                        <!-- Column 1: Oil/Water Separation -->
-                        <div class="slide-card" id="card-s19-c1" style="border-left-color: #5bb35b; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; height: 100%;">
-                            <h3 class="card-title editable" id="text-s19-c1-title" style="font-size: 22px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; margin: 0;">
-                                <span>Oil/Water Separation</span>
-                                <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(91, 179, 91, 0.06); padding: 4px 8px; border-radius: 4px; color: #5bb35b; text-transform: uppercase;">Case 1</span>
-                            </h3>
-                            <div style="display: flex; flex-direction: column; gap: 6px;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px;">Raw Information (Messy Input)</div>
-                                <div class="editable" id="text-s19-c1-raw" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">156 liquid sample images + local operator shift handovers.</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; margin-top: auto;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: #5bb35b; letter-spacing: 0.5px;">GenAI Role (Translation Layer)</div>
-                                <div class="editable" id="text-s19-c1-role" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">Extracts visual attributes (color, haze, oil presence) via VLM.</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; margin-top: auto;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px;">Downstream PSE Use (Structured Core)</div>
-                                <div class="editable" id="text-s19-c1-use" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">Trains tree-based classifiers to map conditions to separation states.</div>
-                            </div>
-                        </div>
+                <div class="slide-body"
+                    style="flex-direction: row; overflow: visible; gap: 24px; margin-bottom: 10px; align-items: stretch;">
+                    <div class="figure-box resizable" id="fig-s19-box"
+                        style="width: 68%; height: 100%; background: var(--card-bg); padding: 15px; box-sizing: border-box; border: 1px solid var(--card-border); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 680 440" width="100%" height="100%" style="display: block;">
+                            <defs>
+                                <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+                                    <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.05" />
+                                </filter>
+                                <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6"
+                                    markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#a0aec0" />
+                                </marker>
+                            </defs>
 
-                        <!-- Column 2: Customer Complaints -->
-                        <div class="slide-card" id="card-s19-c2" style="border-left-color: var(--accent-red); padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; height: 100%;">
-                            <h3 class="card-title editable" id="text-s19-c2-title" style="font-size: 22px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; margin: 0;">
-                                <span>Customer Complaints</span>
-                                <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(200, 16, 46, 0.06); padding: 4px 8px; border-radius: 4px; color: var(--accent-red); text-transform: uppercase;">Case 2</span>
-                            </h3>
-                            <div style="display: flex; flex-direction: column; gap: 6px;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px;">Raw Information (Messy Input)</div>
-                                <div class="editable" id="text-s19-c2-raw" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">Free-text client emails with inconsistent domain terminology.</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; margin-top: auto;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: var(--accent-red); letter-spacing: 0.5px;">GenAI Role (Translation Layer)</div>
-                                <div class="editable" id="text-s19-c2-role" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">Extracts observed symptoms and maps to engineering cause taxonomy.</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; margin-top: auto;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px;">Downstream PSE Use (Structured Core)</div>
-                                <div class="editable" id="text-s19-c2-use" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">Performs statistical defect Pareto analysis linked to production batches.</div>
-                            </div>
-                        </div>
+                            <!-- Background Column Tracks for visual grouping -->
+                            <rect x="20" y="15" width="190" height="410" rx="8" fill="rgba(30, 34, 41, 0.01)"
+                                stroke="rgba(30, 34, 41, 0.03)" stroke-width="1" />
+                            <rect x="240" y="15" width="200" height="410" rx="8" fill="rgba(91, 179, 91, 0.01)"
+                                stroke="rgba(91, 179, 91, 0.03)" stroke-width="1" />
+                            <rect x="470" y="15" width="190" height="410" rx="8" fill="rgba(0, 85, 165, 0.01)"
+                                stroke="rgba(0, 85, 165, 0.03)" stroke-width="1" />
 
-                        <!-- Column 3: Asset Reliability -->
-                        <div class="slide-card" id="card-s19-c3" style="border-left-color: #0055A5; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; height: 100%;">
-                            <h3 class="card-title editable" id="text-s19-c3-title" style="font-size: 22px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; margin: 0;">
-                                <span>Asset Reliability</span>
-                                <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(0, 85, 165, 0.06); padding: 4px 8px; border-radius: 4px; color: #0055A5; text-transform: uppercase;">Case 3</span>
-                            </h3>
-                            <div style="display: flex; flex-direction: column; gap: 6px;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px;">Raw Information (Messy Input)</div>
-                                <div class="editable" id="text-s19-c3-raw" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">Handwritten technician logs + unstructured EAM database notes.</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; margin-top: auto;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: #0055A5; letter-spacing: 0.5px;">GenAI Role (Translation Layer)</div>
-                                <div class="editable" id="text-s19-c3-role" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">Parses notes to extract failure codes + generates SQL queries.</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; margin-top: auto;">
-                                <div style="font-size: 14.5px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px;">Downstream PSE Use (Structured Core)</div>
-                                <div class="editable" id="text-s19-c3-use" style="font-size: 18px; color: var(--text-primary); line-height: 1.5;">Executes Weibull survival models for predictive maintenance.</div>
-                            </div>
-                        </div>
+                            <!-- Column Headers -->
+                            <text x="115" y="35" font-family="var(--font-body)" font-size="12" font-weight="800"
+                                fill="#565e6d" text-anchor="middle" letter-spacing="0.5">RAW MESSY INPUTS</text>
+                            <text x="340" y="35" font-family="var(--font-body)" font-size="12" font-weight="800"
+                                fill="#5bb35b" text-anchor="middle" letter-spacing="0.5">GENAI TRANSLATION</text>
+                            <text x="565" y="35" font-family="var(--font-body)" font-size="12" font-weight="800"
+                                fill="#0055A5" text-anchor="middle" letter-spacing="0.5">STRUCTURED PSE CORE</text>
 
+                            <!-- ================== ROW 1 (Case 1: Separation) ================== -->
+                            <!-- Box 1.1: Input -->
+                            <rect x="30" y="60" width="170" height="100" rx="6" fill="#ffffff" stroke="#cbd5e0"
+                                stroke-width="1.5" filter="url(#shadow)" />
+                            <foreignObject x="35" y="65" width="160" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div class="editable" id="text-s19-c1-title"
+                                        style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 2px;">
+                                        Oil/Water Separation</div>
+                                    <div class="editable" id="text-s19-c1-raw"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">156
+                                        sample images + operator shift logs.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Box 1.2: GenAI -->
+                            <rect x="250" y="60" width="180" height="100" rx="6" fill="#ffffff" stroke="#5bb35b"
+                                stroke-width="2" filter="url(#shadow)" />
+                            <foreignObject x="255" y="65" width="170" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div
+                                        style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #5bb35b; margin-bottom: 2px;">
+                                        VLM Translation</div>
+                                    <div class="editable" id="text-s19-c1-role"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">Extracts
+                                        color, haze, and oil presence attributes.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Box 1.3: PSE Core -->
+                            <rect x="480" y="60" width="170" height="100" rx="6" fill="#ffffff" stroke="#0055A5"
+                                stroke-width="2" filter="url(#shadow)" />
+                            <foreignObject x="485" y="65" width="160" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div
+                                        style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #0055A5; margin-bottom: 2px;">
+                                        Tree Classifiers</div>
+                                    <div class="editable" id="text-s19-c1-use"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">Maps
+                                        extracted attributes to separation states.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Arrows Row 1 -->
+                            <path d="M 200,110 L 250,110" fill="none" stroke="#a0aec0" stroke-width="1.5"
+                                marker-end="url(#arrow)" />
+                            <path d="M 430,110 L 480,110" fill="none" stroke="#a0aec0" stroke-width="1.5"
+                                marker-end="url(#arrow)" />
+
+
+                            <!-- ================== ROW 2 (Case 2: Complaints) ================== -->
+                            <!-- Box 2.1: Input -->
+                            <rect x="30" y="180" width="170" height="100" rx="6" fill="#ffffff" stroke="#cbd5e0"
+                                stroke-width="1.5" filter="url(#shadow)" />
+                            <foreignObject x="35" y="185" width="160" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div class="editable" id="text-s19-c2-title"
+                                        style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 2px;">
+                                        Customer Complaints</div>
+                                    <div class="editable" id="text-s19-c2-raw"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">
+                                        Free-text emails with inconsistent terminology.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Box 2.2: GenAI -->
+                            <rect x="250" y="180" width="180" height="100" rx="6" fill="#ffffff"
+                                stroke="var(--accent-red)" stroke-width="2" filter="url(#shadow)" />
+                            <foreignObject x="255" y="185" width="170" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div
+                                        style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--accent-red); margin-bottom: 2px;">
+                                        Taxonomy Mapping</div>
+                                    <div class="editable" id="text-s19-c2-role"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">Maps
+                                        symptoms to engineering cause taxonomy.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Box 2.3: PSE Core -->
+                            <rect x="480" y="180" width="170" height="100" rx="6" fill="#ffffff" stroke="#0055A5"
+                                stroke-width="2" filter="url(#shadow)" />
+                            <foreignObject x="485" y="185" width="160" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div
+                                        style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #0055A5; margin-bottom: 2px;">
+                                        Defect Pareto</div>
+                                    <div class="editable" id="text-s19-c2-use"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">Performs
+                                        statistical defect analysis by batch.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Arrows Row 2 -->
+                            <path d="M 200,230 L 250,230" fill="none" stroke="#a0aec0" stroke-width="1.5"
+                                marker-end="url(#arrow)" />
+                            <path d="M 430,230 L 480,230" fill="none" stroke="#a0aec0" stroke-width="1.5"
+                                marker-end="url(#arrow)" />
+
+
+                            <!-- ================== ROW 3 (Case 3: Reliability) ================== -->
+                            <!-- Box 3.1: Input -->
+                            <rect x="30" y="300" width="170" height="100" rx="6" fill="#ffffff" stroke="#cbd5e0"
+                                stroke-width="1.5" filter="url(#shadow)" />
+                            <foreignObject x="35" y="305" width="160" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div class="editable" id="text-s19-c3-title"
+                                        style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 2px;">
+                                        Asset Reliability</div>
+                                    <div class="editable" id="text-s19-c3-raw"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">
+                                        Technician logs and unstructured EAM notes.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Box 3.2: GenAI -->
+                            <rect x="250" y="300" width="180" height="100" rx="6" fill="#ffffff" stroke="#5f768e"
+                                stroke-width="2" filter="url(#shadow)" />
+                            <foreignObject x="255" y="305" width="170" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div
+                                        style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #5f768e; margin-bottom: 2px;">
+                                        Code &amp; SQL Gen</div>
+                                    <div class="editable" id="text-s19-c3-role"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">Extracts
+                                        failure codes and writes SQL queries.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Box 3.3: PSE Core -->
+                            <rect x="480" y="300" width="170" height="100" rx="6" fill="#ffffff" stroke="#0055A5"
+                                stroke-width="2" filter="url(#shadow)" />
+                            <foreignObject x="485" y="305" width="160" height="90">
+                                <div xmlns="http://www.w3.org/1999/xhtml"
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 4px;">
+                                    <div
+                                        style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #0055A5; margin-bottom: 2px;">
+                                        Weibull Models</div>
+                                    <div class="editable" id="text-s19-c3-use"
+                                        style="font-size: 13px; color: var(--text-primary); line-height: 1.35;">
+                                        Calculates asset survival probability curves.</div>
+                                </div>
+                            </foreignObject>
+
+                            <!-- Arrows Row 3 -->
+                            <path d="M 200,350 L 250,350" fill="none" stroke="#a0aec0" stroke-width="1.5"
+                                marker-end="url(#arrow)" />
+                            <path d="M 430,350 L 480,350" fill="none" stroke="#a0aec0" stroke-width="1.5"
+                                marker-end="url(#arrow)" />
+                        </svg>
                     </div>
-                    
-                    <div style="width: 100%; display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
-                        <div style="font-family: var(--font-mono); font-size: 14px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Broader PSE Opportunities:</div>
-                        <div class="card-tag-group" style="margin-top: 0; display: flex; gap: 12px; flex-wrap: wrap;">
-                            <div class="card-tag editable" id="tag-s19-1" style="font-size: 15.5px; padding: 6px 12px;">Operator Shift Logs ➔ Abnormal Event Datasets</div>
-                            <div class="card-tag editable" id="tag-s19-2" style="font-size: 15.5px; padding: 6px 12px;">Incident Reports ➔ Precursor Safety Themes</div>
-                            <div class="card-tag editable" id="tag-s19-3" style="font-size: 15.5px; padding: 6px 12px;">Lab Notebooks ➔ Structured R&D Data</div>
-                            <div class="card-tag editable" id="tag-s19-4" style="font-size: 15.5px; padding: 6px 12px;">Procedures &amp; Manuals ➔ Troubleshooting Retrieval</div>
-                            <div class="card-tag editable" id="tag-s19-5" style="font-size: 15.5px; padding: 6px 12px;">Inspection Images ➔ Condition Monitoring Labels</div>
+
+                    <!-- Right: Organized Opportunities Card -->
+                    <div class="slide-card resizable" id="card-s19-opportunities"
+                        style="width: 30%; border-left: 4px solid #6f8c80; padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; height: 100%; box-sizing: border-box;">
+                        <h3 class="card-title editable" id="text-s19-opp-title"
+                            style="font-size: 20px; font-weight: 800; color: #6f8c80; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Broader Opportunities</h3>
+                        <div
+                            style="display: flex; flex-direction: column; gap: 10px; justify-content: space-between; flex: 1;">
+                            <div class="editable" id="opp-s19-1"
+                                style="font-size: 17px; line-height: 1.4; border-bottom: 1px solid var(--card-border); padding-bottom: 8px;">
+                                <strong>Shift Logs:</strong> Operator logs ➔ abnormal event datasets.
+                            </div>
+                            <div class="editable" id="opp-s19-2"
+                                style="font-size: 17px; line-height: 1.4; border-bottom: 1px solid var(--card-border); padding-bottom: 8px;">
+                                <strong>Incident Reports:</strong> Safety narratives ➔ warning themes.
+                            </div>
+                            <div class="editable" id="opp-s19-3"
+                                style="font-size: 17px; line-height: 1.4; border-bottom: 1px solid var(--card-border); padding-bottom: 8px;">
+                                <strong>Lab Notebooks:</strong> Journals ➔ structured R&D datasets.
+                            </div>
+                            <div class="editable" id="opp-s19-4"
+                                style="font-size: 17px; line-height: 1.4; border-bottom: 1px solid var(--card-border); padding-bottom: 8px;">
+                                <strong>Procedures:</strong> Manuals ➔ troubleshooting retrieval.
+                            </div>
+                            <div class="editable" id="opp-s19-5"
+                                style="font-size: 17px; line-height: 1.4; padding-bottom: 4px;">
+                                <strong>Inspection:</strong> Photos ➔ condition monitoring labels.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -4084,82 +4233,122 @@
                 </div>
                 <div class="slide-body" style="overflow: visible;">
                     <div class="grid-2x2 resizable" id="grid-s20" style="width: 100%; height: auto; gap: 24px;">
-                        
+
                         <!-- Card 1: Hallucination -->
-                        <div class="slide-card" id="card-s20-q1" style="border-top: 4px solid var(--accent-red); border-left: 1px solid var(--card-border); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; height: 100%;">
-                            <h3 class="card-title editable" id="text-s20-q1-title" style="font-size: 21px; font-weight: 800; color: var(--text-primary); margin: 0; display: flex; justify-content: space-between;">
+                        <div class="slide-card" id="card-s20-q1"
+                            style="border-top: 4px solid var(--accent-red); border-left: 1px solid var(--card-border); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; height: 100%;">
+                            <h3 class="card-title editable" id="text-s20-q1-title"
+                                style="font-size: 21px; font-weight: 800; color: var(--text-primary); margin: 0; display: flex; justify-content: space-between;">
                                 <span>01. Hallucination</span>
-                                <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(200, 16, 46, 0.06); padding: 4px 8px; border-radius: 4px; color: var(--accent-red); text-transform: uppercase;">Critical Safety Risk</span>
+                                <span
+                                    style="font-family: var(--font-mono); font-size: 11px; background: rgba(200, 16, 46, 0.06); padding: 4px 8px; border-radius: 4px; color: var(--accent-red); text-transform: uppercase;">Critical
+                                    Safety Risk</span>
                             </h3>
                             <div style="font-size: 18px; color: var(--text-secondary); line-height: 1.45;">
-                                <strong>Plant Example:</strong> LLM suggests incorrect maintenance or interlock bypass actions.
+                                <strong>Plant Example:</strong> LLM suggests incorrect maintenance or interlock bypass
+                                actions.
                             </div>
                             <div style="font-size: 18px; color: var(--text-secondary); line-height: 1.45;">
-                                <strong>Engineering Impact:</strong> Safety hazard if operators perform ungrounded procedures.
+                                <strong>Engineering Impact:</strong> Safety hazard if operators perform ungrounded
+                                procedures.
                             </div>
-                            <div style="margin-top: auto; padding: 10px 14px; background: rgba(200, 16, 46, 0.04); border-left: 3px solid var(--accent-red); border-radius: 4px;">
-                                <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--accent-red); letter-spacing: 0.5px; margin-bottom: 2px;">Mitigation</div>
-                                <div class="editable" id="text-s20-q1-mit" style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
+                            <div
+                                style="margin-top: auto; padding: 10px 14px; background: rgba(200, 16, 46, 0.04); border-left: 3px solid var(--accent-red); border-radius: 4px;">
+                                <div
+                                    style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--accent-red); letter-spacing: 0.5px; margin-bottom: 2px;">
+                                    Mitigation</div>
+                                <div class="editable" id="text-s20-q1-mit"
+                                    style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
                                     Strict retrieval constraints limiting answers to validated sources.
                                 </div>
                             </div>
                         </div>
 
                         <!-- Card 2: Wrong Grounding -->
-                        <div class="slide-card" id="card-s20-q2" style="border-top: 4px solid #5f768e; border-left: 1px solid var(--card-border); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; height: 100%;">
-                            <h3 class="card-title editable" id="text-s20-q2-title" style="font-size: 21px; font-weight: 800; color: var(--text-primary); margin: 0; display: flex; justify-content: space-between;">
+                        <div class="slide-card" id="card-s20-q2"
+                            style="border-top: 4px solid #5f768e; border-left: 1px solid var(--card-border); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; height: 100%;">
+                            <h3 class="card-title editable" id="text-s20-q2-title"
+                                style="font-size: 21px; font-weight: 800; color: var(--text-primary); margin: 0; display: flex; justify-content: space-between;">
                                 <span>02. Wrong Grounding</span>
-                                <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(95, 118, 142, 0.06); padding: 4px 8px; border-radius: 4px; color: #5f768e; text-transform: uppercase;">Context Failure</span>
+                                <span
+                                    style="font-family: var(--font-mono); font-size: 11px; background: rgba(95, 118, 142, 0.06); padding: 4px 8px; border-radius: 4px; color: #5f768e; text-transform: uppercase;">Context
+                                    Failure</span>
                             </h3>
                             <div style="font-size: 18px; color: var(--text-secondary); line-height: 1.45;">
-                                <strong>Plant Example:</strong> Retrieving outdated startup procedures from decommissioned lines.
+                                <strong>Plant Example:</strong> Retrieving outdated startup procedures from
+                                decommissioned lines.
                             </div>
                             <div style="font-size: 18px; color: var(--text-secondary); line-height: 1.45;">
-                                <strong>Engineering Impact:</strong> Valve configuration errors or off-spec batches during reactor startups.
+                                <strong>Engineering Impact:</strong> Valve configuration errors or off-spec batches
+                                during reactor startups.
                             </div>
-                            <div style="margin-top: auto; padding: 10px 14px; background: rgba(95, 118, 142, 0.04); border-left: 3px solid #5f768e; border-radius: 4px;">
-                                <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #5f768e; letter-spacing: 0.5px; margin-bottom: 2px;">Mitigation</div>
-                                <div class="editable" id="text-s20-q2-mit" style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
+                            <div
+                                style="margin-top: auto; padding: 10px 14px; background: rgba(95, 118, 142, 0.04); border-left: 3px solid #5f768e; border-radius: 4px;">
+                                <div
+                                    style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #5f768e; letter-spacing: 0.5px; margin-bottom: 2px;">
+                                    Mitigation</div>
+                                <div class="editable" id="text-s20-q2-mit"
+                                    style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
                                     Metadata filtering restricting retrieval to active plant operating files.
                                 </div>
                             </div>
                         </div>
 
                         <!-- Card 3: Query/Tool Failure -->
-                        <div class="slide-card" id="card-s20-q3" style="border-top: 4px solid #6f8c80; border-left: 1px solid var(--card-border); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; height: 100%;">
-                            <h3 class="card-title editable" id="text-s20-q3-title" style="font-size: 21px; font-weight: 800; color: var(--text-primary); margin: 0; display: flex; justify-content: space-between;">
+                        <div class="slide-card" id="card-s20-q3"
+                            style="border-top: 4px solid #6f8c80; border-left: 1px solid var(--card-border); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; height: 100%;">
+                            <h3 class="card-title editable" id="text-s20-q3-title"
+                                style="font-size: 21px; font-weight: 800; color: var(--text-primary); margin: 0; display: flex; justify-content: space-between;">
                                 <span>03. Query/Tool Failure</span>
-                                <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(111, 140, 128, 0.06); padding: 4px 8px; border-radius: 4px; color: #6f8c80; text-transform: uppercase;">Interface Risk</span>
+                                <span
+                                    style="font-family: var(--font-mono); font-size: 11px; background: rgba(111, 140, 128, 0.06); padding: 4px 8px; border-radius: 4px; color: #6f8c80; text-transform: uppercase;">Interface
+                                    Risk</span>
                             </h3>
                             <div style="font-size: 18px; color: var(--text-secondary); line-height: 1.45;">
-                                <strong>Plant Example:</strong> Generating SQL queries that pull tag data in psig, assuming psia.
+                                <strong>Plant Example:</strong> Generating SQL queries that pull tag data in psig,
+                                assuming psia.
                             </div>
                             <div style="font-size: 18px; color: var(--text-secondary); line-height: 1.45;">
-                                <strong>Engineering Impact:</strong> Corrupts compressor efficiency calculations and reactor heat balances.
+                                <strong>Engineering Impact:</strong> Corrupts compressor efficiency calculations and
+                                reactor heat balances.
                             </div>
-                            <div style="margin-top: auto; padding: 10px 14px; background: rgba(111, 140, 128, 0.04); border-left: 3px solid #6f8c80; border-radius: 4px;">
-                                <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #6f8c80; letter-spacing: 0.5px; margin-bottom: 2px;">Mitigation</div>
-                                <div class="editable" id="text-s20-q3-mit" style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
+                            <div
+                                style="margin-top: auto; padding: 10px 14px; background: rgba(111, 140, 128, 0.04); border-left: 3px solid #6f8c80; border-radius: 4px;">
+                                <div
+                                    style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #6f8c80; letter-spacing: 0.5px; margin-bottom: 2px;">
+                                    Mitigation</div>
+                                <div class="editable" id="text-s20-q3-mit"
+                                    style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
                                     Schema unit verification tests and parameter boundary validation.
                                 </div>
                             </div>
                         </div>
 
                         <!-- Card 4: Automation Bias -->
-                        <div class="slide-card" id="card-s20-q4" style="border-top: 4px solid #3a4d63; border-left: 1px solid var(--card-border); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; height: 100%;">
-                            <h3 class="card-title editable" id="text-s20-q4-title" style="font-size: 21px; font-weight: 800; color: var(--text-primary); margin: 0; display: flex; justify-content: space-between;">
+                        <div class="slide-card" id="card-s20-q4"
+                            style="border-top: 4px solid #3a4d63; border-left: 1px solid var(--card-border); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; height: 100%;">
+                            <h3 class="card-title editable" id="text-s20-q4-title"
+                                style="font-size: 21px; font-weight: 800; color: var(--text-primary); margin: 0; display: flex; justify-content: space-between;">
                                 <span>04. Automation Bias</span>
-                                <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(58, 77, 99, 0.06); padding: 4px 8px; border-radius: 4px; color: #3a4d63; text-transform: uppercase;">Human Factor</span>
+                                <span
+                                    style="font-family: var(--font-mono); font-size: 11px; background: rgba(58, 77, 99, 0.06); padding: 4px 8px; border-radius: 4px; color: #3a4d63; text-transform: uppercase;">Human
+                                    Factor</span>
                             </h3>
                             <div style="font-size: 18px; color: var(--text-secondary); line-height: 1.45;">
-                                <strong>Plant Example:</strong> Operator blindly accepts a generated handover summary, omitting a key bypass.
+                                <strong>Plant Example:</strong> Operator blindly accepts a generated handover summary,
+                                omitting a key bypass.
                             </div>
                             <div style="font-size: 18px; color: var(--text-secondary); line-height: 1.45;">
-                                <strong>Engineering Impact:</strong> Loss of situational awareness leading to process shutdowns.
+                                <strong>Engineering Impact:</strong> Loss of situational awareness leading to process
+                                shutdowns.
                             </div>
-                            <div style="margin-top: auto; padding: 10px 14px; background: rgba(58, 77, 99, 0.04); border-left: 3px solid #3a4d63; border-radius: 4px;">
-                                <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #3a4d63; letter-spacing: 0.5px; margin-bottom: 2px;">Mitigation</div>
-                                <div class="editable" id="text-s20-q4-mit" style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
+                            <div
+                                style="margin-top: auto; padding: 10px 14px; background: rgba(58, 77, 99, 0.04); border-left: 3px solid #3a4d63; border-radius: 4px;">
+                                <div
+                                    style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #3a4d63; letter-spacing: 0.5px; margin-bottom: 2px;">
+                                    Mitigation</div>
+                                <div class="editable" id="text-s20-q4-mit"
+                                    style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
                                     Mandatory interactive checklists highlighting safety-critical alerts in the UI.
                                 </div>
                             </div>
@@ -4189,22 +4378,73 @@
                 </div>
                 <div class="slide-body">
                     <div class="col-left">
-                        <div class="slide-card resizable" id="card-s21-left" style="height: 100%;">
-                            <h3 class="card-title editable" id="text-s21-cleft-title">Required Monitoring Infrastructure</h3>
-                            <p class="card-text editable" id="text-s21-cleft-body" style="font-size: 18px;">Before scaling GenAI systems, we must establish validation benchmarks and operational governance layers.</p>
-                            <ul class="bullet-list" style="margin-top: 15px;">
-                                <li class="bullet-item editable" id="text-s21-li1" style="font-size: 18px;"><strong>Golden Datasets:</strong> Curated libraries of historical failures and complaints with expert-verified categorizations.</li>
-                                <li class="bullet-item editable" id="text-s21-li2" style="font-size: 18px;"><strong>SME-in-the-Loop:</strong> Capturing expert correction logs to continuously fine-tune prompts and taxonomy definitions.</li>
-                                <li class="bullet-item editable" id="text-s21-li3" style="font-size: 18px;"><strong>Model Drift Tracking:</strong> Alerting when changes in plant procedures, equipment models, or feed stocks lead to extraction errors.</li>
-                                <li class="bullet-item editable" id="text-s21-li4" style="font-size: 18px;"><strong>Audit Trails:</strong> Storing exact system steps (query generated, retrieved chunks, LLM parameters) for critical plant events.</li>
-                            </ul>
-                            <div style="margin-top: 15px; padding: 12px 16px; background: rgba(0, 85, 165, 0.04); border-left: 3px solid #0055A5; border-radius: 4px;">
-                                <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #0055A5; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
-                                    <span style="font-family: var(--font-mono); font-size: 10px; background: rgba(0, 85, 165, 0.08); padding: 2px 6px; border-radius: 3px;">Dow Benchmarks</span>
+                        <div class="slide-card resizable" id="card-s21-left"
+                            style="height: 100%; border: none; background: transparent; padding: 0; display: flex; flex-direction: column; gap: 16px; box-shadow: none;">
+                            <h3 class="card-title editable" id="text-s21-cleft-title"
+                                style="font-size: 24px; font-weight: 800; color: var(--text-primary); margin: 0;">
+                                Required Monitoring Infrastructure</h3>
+                            <p class="card-text editable" id="text-s21-cleft-body"
+                                style="font-size: 18px; margin: 0; color: var(--text-secondary);">Establish systematic
+                                validation benchmarks and operational governance before scaling.</p>
+
+                            <!-- 2x2 Grid of Monitoring Cards -->
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; flex: 1;">
+                                <!-- Card 1: Golden Datasets -->
+                                <div class="slide-card" id="card-s21-g1"
+                                    style="background: rgba(0, 85, 165, 0.03); border: 1px solid rgba(0, 85, 165, 0.15); border-left: 4px solid #0055A5; padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; height: 100%; box-sizing: border-box; justify-content: center;">
+                                    <div
+                                        style="font-size: 20px; font-weight: 800; color: #0055A5; text-transform: uppercase; letter-spacing: 0.5px;">
+                                        01. Golden Datasets</div>
+                                    <div class="editable" id="text-s21-li1"
+                                        style="font-size: 18px; color: var(--text-primary); line-height: 1.45;">Curated
+                                        libraries of historical failures with expert-verified labels.</div>
+                                </div>
+                                <!-- Card 2: SME Feedback -->
+                                <div class="slide-card" id="card-s21-g2"
+                                    style="background: rgba(91, 179, 91, 0.03); border: 1px solid rgba(91, 179, 91, 0.15); border-left: 4px solid #5bb35b; padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; height: 100%; box-sizing: border-box; justify-content: center;">
+                                    <div
+                                        style="font-size: 20px; font-weight: 800; color: #5bb35b; text-transform: uppercase; letter-spacing: 0.5px;">
+                                        02. SME Feedback</div>
+                                    <div class="editable" id="text-s21-li2"
+                                        style="font-size: 18px; color: var(--text-primary); line-height: 1.45;">Expert
+                                        correction logs to continuously refine taxonomies.</div>
+                                </div>
+                                <!-- Card 3: Drift Tracking -->
+                                <div class="slide-card" id="card-s21-g3"
+                                    style="background: rgba(200, 16, 46, 0.03); border: 1px solid rgba(200, 16, 46, 0.15); border-left: 4px solid var(--accent-red); padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; height: 100%; box-sizing: border-box; justify-content: center;">
+                                    <div
+                                        style="font-size: 20px; font-weight: 800; color: var(--accent-red); text-transform: uppercase; letter-spacing: 0.5px;">
+                                        03. Drift Tracking</div>
+                                    <div class="editable" id="text-s21-li3"
+                                        style="font-size: 18px; color: var(--text-primary); line-height: 1.45;">
+                                        Monitoring extraction errors as plant operating procedures change.</div>
+                                </div>
+                                <!-- Card 4: Audit Trails -->
+                                <div class="slide-card" id="card-s21-g4"
+                                    style="background: rgba(95, 118, 142, 0.03); border: 1px solid rgba(95, 118, 142, 0.15); border-left: 4px solid #5f768e; padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; height: 100%; box-sizing: border-box; justify-content: center;">
+                                    <div
+                                        style="font-size: 20px; font-weight: 800; color: #5f768e; text-transform: uppercase; letter-spacing: 0.5px;">
+                                        04. Audit Trails</div>
+                                    <div class="editable" id="text-s21-li4"
+                                        style="font-size: 18px; color: var(--text-primary); line-height: 1.45;">
+                                        Traceable records of user queries, chunks, and parameters.</div>
+                                </div>
+                            </div>
+
+                            <!-- Dow Benchmarks Callout -->
+                            <div
+                                style="padding: 12px 16px; background: rgba(0, 85, 165, 0.04); border-left: 3px solid #0055A5; border-radius: 4px; box-sizing: border-box;">
+                                <div
+                                    style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #0055A5; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                                    <span
+                                        style="font-family: var(--font-mono); font-size: 10px; background: rgba(0, 85, 165, 0.08); padding: 2px 6px; border-radius: 3px;">Dow
+                                        Benchmarks</span>
                                     <span>Industrial Validation Examples</span>
                                 </div>
-                                <div class="editable" id="text-s21-pse-warn" style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.5;">
-                                    Includes expert-labeled pump failure modes, pre-validated SQL queries, and datasets linking water separation photos to historian tags.
+                                <div class="editable" id="text-s21-pse-warn"
+                                    style="font-style: italic; font-size: 18px; color: var(--text-primary); line-height: 1.45;">
+                                    Includes expert-labeled pump failure modes, pre-validated SQL queries, and datasets
+                                    linking water separation photos to historian tags.
                                 </div>
                             </div>
                         </div>
@@ -4263,57 +4503,142 @@
                     <p class="slide-subtitle editable" id="text-s22-subtitle">Move from prototypes to manufacturing
                         systems by selecting high-friction, low-regret use cases</p>
                 </div>
-                <div class="slide-body" style="flex-direction: column; overflow: visible; gap: 16px; margin-bottom: 10px;">
-                    <div style="display: flex; gap: 24px; width: 100%;">
-                        <div class="col-left">
-                            <div class="slide-card resizable" id="card-s22-left" style="border-left-color: #5bb35b; padding: 20px 24px; height: 100%;">
-                                <h3 class="card-title editable" id="text-s22-cleft-title" style="color: #5bb35b; display: flex; align-items: center; justify-content: space-between; margin: 0 0 8px 0;">
-                                    <span>Start Here</span>
-                                    <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(91, 179, 91, 0.08); padding: 4px 8px; border-radius: 4px; color: #5bb35b; text-transform: uppercase;">Assistive &amp; Reviewable</span>
-                                </h3>
-                                <p class="card-text editable" id="text-s22-cleft-body" style="font-size: 18px;">Target areas where data collection is difficult, but mistakes do not pose safety hazards.</p>
-                                <ul class="bullet-list" style="margin-top: 10px;">
-                                    <li class="bullet-item editable" id="text-s22-li1" style="font-size: 18px;"><strong>Technical Search:</strong> Finding and summarizing specific operating manuals.</li>
-                                    <li class="bullet-item editable" id="text-s22-li2" style="font-size: 18px;"><strong>Complaint Theming:</strong> Categorizing customer complaints for Pareto analysis.</li>
-                                    <li class="bullet-item editable" id="text-s22-li3" style="font-size: 18px;"><strong>Maintenance Logs:</strong> Compiling failure statistics from technician texts.</li>
-                                    <li class="bullet-item editable" id="text-s22-li4" style="font-size: 18px;"><strong>Handover Drafts:</strong> Synthesizing plant shift histories for review.</li>
-                                </ul>
+                <div class="slide-body" style="overflow: visible; margin-bottom: 10px;">
+                    <div style="display: flex; gap: 24px; width: 100%; height: 100%;">
+
+                        <!-- Column 1: Start Here -->
+                        <div class="slide-card resizable" id="card-s22-c1"
+                            style="width: 32%; border-left: 4px solid #5bb35b; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; height: 100%; box-sizing: border-box;">
+                            <h3 class="card-title editable" id="text-s22-c1-title"
+                                style="color: #5bb35b; display: flex; align-items: center; justify-content: space-between; margin: 0;">
+                                <span>Start Here</span>
+                                <span
+                                    style="font-family: var(--font-mono); font-size: 11px; background: rgba(91, 179, 91, 0.08); padding: 4px 8px; border-radius: 4px; color: #5bb35b; text-transform: uppercase;">Assistive</span>
+                            </h3>
+                            <p class="card-text editable" id="text-s22-c1-body"
+                                style="font-size: 18px; margin: 0; color: var(--text-secondary);">Target high-friction,
+                                low-regret tasks where errors are easily reviewed.</p>
+                            <div
+                                style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px; flex: 1; justify-content: space-between;">
+                                <div class="slide-card" id="card-s22-li1-box"
+                                    style="background: rgba(91, 179, 91, 0.03); border: 1px solid rgba(91, 179, 91, 0.15); border-left: 3px solid #5bb35b; padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-li1"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Technical Search:</strong> Finding and summarizing operating manuals.
+                                    </div>
+                                </div>
+                                <div class="slide-card" id="card-s22-li2-box"
+                                    style="background: rgba(91, 179, 91, 0.03); border: 1px solid rgba(91, 179, 91, 0.15); border-left: 3px solid #5bb35b; padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-li2"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Complaint Theming:</strong> Categorizing customer defects.</div>
+                                </div>
+                                <div class="slide-card" id="card-s22-li3-box"
+                                    style="background: rgba(91, 179, 91, 0.03); border: 1px solid rgba(91, 179, 91, 0.15); border-left: 3px solid #5bb35b; padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-li3"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Maintenance Logs:</strong> Structuring narrative texts for analysis.
+                                    </div>
+                                </div>
+                                <div class="slide-card" id="card-s22-li4-box"
+                                    style="background: rgba(91, 179, 91, 0.03); border: 1px solid rgba(91, 179, 91, 0.15); border-left: 3px solid #5bb35b; padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-li4"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Handover Drafts:</strong> Compiling shift logs for engineer review.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-right">
-                            <div class="slide-card resizable" id="card-s22-right" style="border-left-color: var(--accent-red); padding: 20px 24px; height: 100%;">
-                                <h3 class="card-title editable" id="text-s22-cright-title" style="color: var(--accent-red); display: flex; align-items: center; justify-content: space-between; margin: 0 0 8px 0;">
-                                    <span>Avoid Initially</span>
-                                    <span style="font-family: var(--font-mono); font-size: 11px; background: rgba(200, 16, 46, 0.08); padding: 4px 8px; border-radius: 4px; color: var(--accent-red); text-transform: uppercase;">Autonomous &amp; High-Risk</span>
-                                </h3>
-                                <p class="card-text editable" id="text-s22-cright-body" style="font-size: 18px;">Do not link models to safety-critical decisions without human verification loops.</p>
-                                <ul class="bullet-list" style="margin-top: 10px;">
-                                    <li class="bullet-item editable" id="text-s22-ri1" style="font-size: 18px;"><strong>Direct Plant Control:</strong> Allowing LLMs to write setpoints directly to DCS/PLC controllers.</li>
-                                    <li class="bullet-item editable" id="text-s22-ri2" style="font-size: 18px;"><strong>Safety Bypass:</strong> Recommending safety instrumentation or interlock bypass actions.</li>
-                                    <li class="bullet-item editable" id="text-s22-ri3" style="font-size: 18px;"><strong>Causal Conclusion:</strong> Relying on LLM summaries alone for formal PHA/RCA investigations.</li>
-                                    <li class="bullet-item editable" id="text-s22-ri4" style="font-size: 18px;"><strong>Customer Claims:</strong> Auto-generating product quality compliance statements.</li>
-                                </ul>
+
+                        <!-- Column 2: Avoid Initially -->
+                        <div class="slide-card resizable" id="card-s22-c2"
+                            style="width: 32%; border-left-color: var(--accent-red); padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; height: 100%; box-sizing: border-box;">
+                            <h3 class="card-title editable" id="text-s22-c2-title"
+                                style="color: var(--accent-red); display: flex; align-items: center; justify-content: space-between; margin: 0;">
+                                <span>Avoid Initially</span>
+                                <span
+                                    style="font-family: var(--font-mono); font-size: 11px; background: rgba(200, 16, 46, 0.08); padding: 4px 8px; border-radius: 4px; color: var(--accent-red); text-transform: uppercase;">High-Risk</span>
+                            </h3>
+                            <p class="card-text editable" id="text-s22-c2-body"
+                                style="font-size: 18px; margin: 0; color: var(--text-secondary);">Do not link models to
+                                safety-critical decisions without human verification.</p>
+                            <div
+                                style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px; flex: 1; justify-content: space-between;">
+                                <div class="slide-card" id="card-s22-ri1-box"
+                                    style="background: rgba(200, 16, 46, 0.03); border: 1px solid rgba(200, 16, 46, 0.15); border-left: 3px solid var(--accent-red); padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-ri1"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Direct Control:</strong> Writing setpoints directly to controller loops.
+                                    </div>
+                                </div>
+                                <div class="slide-card" id="card-s22-ri2-box"
+                                    style="background: rgba(200, 16, 46, 0.03); border: 1px solid rgba(200, 16, 46, 0.15); border-left: 3px solid var(--accent-red); padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-ri2"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Safety Bypasses:</strong> Recommending safety interlock overrides.</div>
+                                </div>
+                                <div class="slide-card" id="card-s22-ri3-box"
+                                    style="background: rgba(200, 16, 46, 0.03); border: 1px solid rgba(200, 16, 46, 0.15); border-left: 3px solid var(--accent-red); padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-ri3"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Unproven RCA:</strong> Relying on LLMs alone for root-cause decisions.
+                                    </div>
+                                </div>
+                                <div class="slide-card" id="card-s22-ri4-box"
+                                    style="background: rgba(200, 16, 46, 0.03); border: 1px solid rgba(200, 16, 46, 0.15); border-left: 3px solid var(--accent-red); padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-ri4"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Auto Customer Claims:</strong> Auto-generating quality declarations.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div style="width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 10px;">
-                        <div class="slide-card no-accent" style="padding: 12px 16px; border-left: 3px solid #6f8c80; display: flex; flex-direction: column; gap: 4px;">
-                            <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #6f8c80; letter-spacing: 0.5px;">Guideline 1</div>
-                            <div class="editable" id="text-s22-g1" style="font-size: 18px; color: var(--text-primary); line-height: 1.45;"><strong>Human-in-the-Loop:</strong> Keep operators and engineers as final approval layer.</div>
+
+                        <!-- Column 3: Deployment Core Playbook -->
+                        <div class="slide-card resizable" id="card-s22-c3"
+                            style="width: 32%; border-left-color: #0055A5; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; height: 100%; box-sizing: border-box;">
+                            <h3 class="card-title editable" id="text-s22-c3-title"
+                                style="color: #0055A5; display: flex; align-items: center; justify-content: space-between; margin: 0;">
+                                <span>Deployment Rules</span>
+                                <span
+                                    style="font-family: var(--font-mono); font-size: 11px; background: rgba(0, 85, 165, 0.08); padding: 4px 8px; border-radius: 4px; color: #0055A5; text-transform: uppercase;">Playbook</span>
+                            </h3>
+                            <p class="card-text editable" id="text-s22-c3-body"
+                                style="font-size: 18px; margin: 0; color: var(--text-secondary);">Four fundamental
+                                guardrails for scaling manufacturing systems.</p>
+                            <div
+                                style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px; flex: 1; justify-content: space-between;">
+                                <div class="slide-card" id="card-s22-g1-box"
+                                    style="background: rgba(0, 85, 165, 0.03); border: 1px solid rgba(0, 85, 165, 0.15); border-left: 3px solid #0055A5; padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-g1"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Human-in-the-Loop:</strong> Keep operators as the final approval layer.
+                                    </div>
+                                </div>
+                                <div class="slide-card" id="card-s22-g2-box"
+                                    style="background: rgba(0, 85, 165, 0.03); border: 1px solid rgba(0, 85, 165, 0.15); border-left: 3px solid #0055A5; padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-g2"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Source Traceability:</strong> Link model outputs directly to evidence.
+                                    </div>
+                                </div>
+                                <div class="slide-card" id="card-s22-g3-box"
+                                    style="background: rgba(0, 85, 165, 0.03); border: 1px solid rgba(0, 85, 165, 0.15); border-left: 3px solid #0055A5; padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-g3"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Escalation Paths:</strong> Flag uncertainty and route tasks to SMEs.
+                                    </div>
+                                </div>
+                                <div class="slide-card" id="card-s22-g4-box"
+                                    style="background: rgba(0, 85, 165, 0.03); border: 1px solid rgba(0, 85, 165, 0.15); border-left: 3px solid #0055A5; padding: 10px 14px; border-radius: 6px; box-shadow: none; display: flex; align-items: center; flex: 1; min-height: 52px; box-sizing: border-box;">
+                                    <div class="editable" id="text-s22-g4"
+                                        style="font-size: 18px; line-height: 1.4; color: var(--text-primary);">
+                                        <strong>Workflow Integration:</strong> Embed models into existing plant portals.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="slide-card no-accent" style="padding: 12px 16px; border-left: 3px solid #5f768e; display: flex; flex-direction: column; gap: 4px;">
-                            <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #5f768e; letter-spacing: 0.5px;">Guideline 2</div>
-                            <div class="editable" id="text-s22-g2" style="font-size: 18px; color: var(--text-primary); line-height: 1.45;"><strong>Source Traceability:</strong> Link all model outputs directly to source evidence.</div>
-                        </div>
-                        <div class="slide-card no-accent" style="padding: 12px 16px; border-left: 3px solid #3a4d63; display: flex; flex-direction: column; gap: 4px;">
-                            <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #3a4d63; letter-spacing: 0.5px;">Guideline 3</div>
-                            <div class="editable" id="text-s22-g3" style="font-size: 18px; color: var(--text-primary); line-height: 1.45;"><strong>Escalation Paths:</strong> Flag uncertainty and route low-confidence tasks to SMEs.</div>
-                        </div>
-                        <div class="slide-card no-accent" style="padding: 12px 16px; border-left: 3px solid #0055A5; display: flex; flex-direction: column; gap: 4px;">
-                            <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: #0055A5; letter-spacing: 0.5px;">Guideline 4</div>
-                            <div class="editable" id="text-s22-g4" style="font-size: 18px; color: var(--text-primary); line-height: 1.45;"><strong>Workflow Integration:</strong> Embed GenAI tools into existing plant portals.</div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="slide-footer">
@@ -4340,59 +4665,169 @@
                     <div class="col-left">
                         <div class="slide-card resizable" id="card-s23-left" style="height: 100%;">
                             <h3 class="card-title editable" id="text-s23-cleft-title">Integrated Decision Framework</h3>
-                            <p class="card-text editable" id="text-s23-cleft-body" style="font-size: 18px;">GenAI’s lasting impact in chemical manufacturing will come from integrated environments where engineering judgment is supported rather than bypassed.</p>
+                            <p class="card-text editable" id="text-s23-cleft-body" style="font-size: 18px;">GenAI’s
+                                lasting impact in chemical manufacturing will come from integrated environments where
+                                engineering judgment is supported rather than bypassed.</p>
                             <ul class="bullet-list" style="margin-top: 15px;">
-                                <li class="bullet-item editable" id="text-s23-li1" style="font-size: 18px;"><strong>Desiloing &amp; Grounding:</strong> Integrating raw plant datasets with auditable, traceable evidence.</li>
-                                <li class="bullet-item editable" id="text-s23-li2" style="font-size: 18px;"><strong>Agentic Workflows:</strong> Observable multi-agent loops that run within safety and operations constraints.</li>
-                                <li class="bullet-item editable" id="text-s23-li3" style="font-size: 18px;"><strong>Multimodal Support:</strong> Combining time-series process tags, narratives, and equipment images.</li>
-                                <li class="bullet-item editable" id="text-s23-li4" style="font-size: 18px;"><strong>Established PSE Core:</strong> Strengthening MPC, simulations, and optimization routines by providing high-quality inputs.</li>
+                                <li class="bullet-item editable" id="text-s23-li1" style="font-size: 18px;">
+                                    <strong>Desiloing &amp; Grounding:</strong> Integrating raw plant datasets with
+                                    auditable, traceable evidence.</li>
+                                <li class="bullet-item editable" id="text-s23-li2" style="font-size: 18px;">
+                                    <strong>Agentic Workflows:</strong> Observable multi-agent loops that run within
+                                    safety and operations constraints.</li>
+                                <li class="bullet-item editable" id="text-s23-li3" style="font-size: 18px;">
+                                    <strong>Multimodal Support:</strong> Combining time-series process tags, narratives,
+                                    and equipment images.</li>
+                                <li class="bullet-item editable" id="text-s23-li4" style="font-size: 18px;">
+                                    <strong>Established PSE Core:</strong> Strengthening MPC, simulations, and
+                                    optimization routines by providing high-quality inputs.</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-right">
-                        <!-- SVG Final Architecture Diagram -->
-                        <div class="figure-box resizable" id="fig-s23-box" style="height: 100%; width: 100%; background: var(--card-bg); padding: 20px;">
-                            <svg viewBox="0 0 500 500" width="100%" height="100%" style="display: block;">
+                        <!-- SVG Final Architecture Diagram: Agentic Loop -->
+                        <div class="figure-box resizable" id="fig-s23-box"
+                            style="height: 100%; width: 100%; background: var(--card-bg); padding: 15px; box-sizing: border-box;">
+                            <svg viewBox="0 0 600 500" width="100%" height="100%" style="display: block;">
                                 <defs>
-                                    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <linearGradient id="planGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" stop-color="#0055A5" stop-opacity="0.05" />
-                                        <stop offset="100%" stop-color="#0055A5" stop-opacity="0.15" />
+                                        <stop offset="100%" stop-color="#0055A5" stop-opacity="0.2" />
                                     </linearGradient>
-                                    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <linearGradient id="actGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#5bb35b" stop-opacity="0.05" />
+                                        <stop offset="100%" stop-color="#5bb35b" stop-opacity="0.2" />
+                                    </linearGradient>
+                                    <linearGradient id="obsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#5f768e" stop-opacity="0.05" />
+                                        <stop offset="100%" stop-color="#5f768e" stop-opacity="0.2" />
+                                    </linearGradient>
+                                    <linearGradient id="verGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#C8102E" stop-opacity="0.05" />
+                                        <stop offset="100%" stop-color="#C8102E" stop-opacity="0.2" />
+                                    </linearGradient>
+                                    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6"
+                                        markerHeight="6" orient="auto-start-reverse">
                                         <path d="M 0 1 L 10 5 L 0 9 z" fill="#a0aec0" />
                                     </marker>
+                                    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+                                        <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1" />
+                                    </filter>
                                 </defs>
 
-                                <!-- Central Hub -->
-                                <rect x="150" y="210" width="200" height="80" rx="8" fill="url(#flowGrad)" stroke="#0055A5" stroke-width="2" />
-                                <text x="250" y="248" font-family="var(--font-body)" font-size="16" font-weight="bold" fill="#0055A5" text-anchor="middle">GENAI LAYER</text>
-                                <text x="250" y="270" font-family="var(--font-body)" font-size="12" fill="#565e6d" text-anchor="middle">(Translation &amp; Interface)</text>
+                                <!-- Central Dotted Loop Track -->
+                                <circle cx="300" cy="245" r="95" fill="none" stroke="#cbd5e0" stroke-dasharray="4,4"
+                                    stroke-width="2" />
 
-                                <!-- Input Box Left (Messy Data) -->
-                                <rect x="20" y="70" width="180" height="70" rx="6" fill="#f8fafc" stroke="#5f768e" stroke-width="1.5" />
-                                <text x="110" y="98" font-family="var(--font-body)" font-size="14" font-weight="bold" fill="#3a4d63" text-anchor="middle">Unstructured Inputs</text>
-                                <text x="110" y="118" font-family="var(--font-body)" font-size="11" fill="#565e6d" text-anchor="middle">(Shift Logs, Narratives, Images)</text>
+                                <!-- SME Review Link (Top) -->
+                                <rect x="220" y="25" width="160" height="40" rx="6" fill="#f8fafc" stroke="#475569"
+                                    stroke-width="1.5" filter="url(#shadow)" />
+                                <text x="300" y="44" font-family="var(--font-body)" font-size="12" font-weight="bold"
+                                    fill="#3a4d63" text-anchor="middle">SME Verification Loop</text>
+                                <text x="300" y="56" font-family="var(--font-body)" font-size="9" fill="#565e6d"
+                                    text-anchor="middle">(Feedback &amp; RLHF)</text>
+                                <path d="M 300,65 L 300,105" fill="none" stroke="#a0aec0" stroke-width="1.5"
+                                    stroke-dasharray="2,2" marker-end="url(#arrow)" marker-start="url(#arrow)" />
 
-                                <!-- Input Box Right (Structured Data) -->
-                                <rect x="300" y="70" width="180" height="70" rx="6" fill="#f8fafc" stroke="#5f768e" stroke-width="1.5" />
-                                <text x="390" y="98" font-family="var(--font-body)" font-size="14" font-weight="bold" fill="#3a4d63" text-anchor="middle">Structured Historians</text>
-                                <text x="390" y="118" font-family="var(--font-body)" font-size="11" fill="#565e6d" text-anchor="middle">(PI Tags, LIMS, EAM)</text>
+                                <!-- Node 1: Plan (Reasoning LLM) -->
+                                <rect x="220" y="105" width="160" height="50" rx="8" fill="url(#planGrad)"
+                                    stroke="#0055A5" stroke-width="2" filter="url(#shadow)" />
+                                <text x="300" y="127" font-family="var(--font-body)" font-size="13" font-weight="bold"
+                                    fill="#0055A5" text-anchor="middle">Reason / Plan</text>
+                                <text x="300" y="143" font-family="var(--font-body)" font-size="10" fill="#565e6d"
+                                    text-anchor="middle">(LLM Agent Orchestrator)</text>
 
-                                <!-- Downstream Output Box Bottom Left (PSE Models) -->
-                                <rect x="20" y="360" width="180" height="70" rx="6" fill="#f8fafc" stroke="#6f8c80" stroke-width="1.5" />
-                                <text x="110" y="388" font-family="var(--font-body)" font-size="14" font-weight="bold" fill="#2d3748" text-anchor="middle">PSE Toolbox Core</text>
-                                <text x="110" y="408" font-family="var(--font-body)" font-size="11" fill="#565e6d" text-anchor="middle">(MPC, Simulation, Optimization)</text>
+                                <!-- Node 2: Act (Tool Call) -->
+                                <rect x="335" y="220" width="130" height="50" rx="8" fill="url(#actGrad)"
+                                    stroke="#5bb35b" stroke-width="2" filter="url(#shadow)" />
+                                <text x="400" y="242" font-family="var(--font-body)" font-size="13" font-weight="bold"
+                                    fill="#5bb35b" text-anchor="middle">Act (Call Tools)</text>
+                                <text x="400" y="258" font-family="var(--font-body)" font-size="10" fill="#565e6d"
+                                    text-anchor="middle">(SQL, RAG, Python)</text>
 
-                                <!-- Downstream Output Box Bottom Right (Human Review) -->
-                                <rect x="300" y="360" width="180" height="70" rx="6" fill="#f8fafc" stroke="var(--accent-red)" stroke-width="1.5" />
-                                <text x="390" y="388" font-family="var(--font-body)" font-size="14" font-weight="bold" fill="#2d3748" text-anchor="middle">SME Review Loop</text>
-                                <text x="390" y="408" font-family="var(--font-body)" font-size="11" fill="#565e6d" text-anchor="middle">(Verification, Active Learning)</text>
+                                <!-- Node 3: Observe (Parse Outputs) -->
+                                <rect x="220" y="335" width="160" height="50" rx="8" fill="url(#obsGrad)"
+                                    stroke="#5f768e" stroke-width="2" filter="url(#shadow)" />
+                                <text x="300" y="357" font-family="var(--font-body)" font-size="13" font-weight="bold"
+                                    fill="#3a4d63" text-anchor="middle">Observe &amp; Parse</text>
+                                <text x="300" y="373" font-family="var(--font-body)" font-size="10" fill="#565e6d"
+                                    text-anchor="middle">(Verify Response State)</text>
 
-                                <!-- Arrows -->
-                                <path d="M 110,140 L 190,210" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)" />
-                                <path d="M 390,140 L 310,210" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)" />
-                                <path d="M 210,290 L 130,360" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)" />
-                                <path d="M 290,290 L 370,360" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)" />
+                                <!-- Node 4: Verify (Grounded Check) -->
+                                <rect x="135" y="220" width="130" height="50" rx="8" fill="url(#verGrad)"
+                                    stroke="var(--accent-red)" stroke-width="2" filter="url(#shadow)" />
+                                <text x="200" y="242" font-family="var(--font-body)" font-size="13" font-weight="bold"
+                                    fill="var(--accent-red)" text-anchor="middle">Verify Grounding</text>
+                                <text x="200" y="258" font-family="var(--font-body)" font-size="10" fill="#565e6d"
+                                    text-anchor="middle">(Check Constraints)</text>
+
+                                <!-- Curved Loop Arrows -->
+                                <path d="M 345,155 C 385,175 400,200 400,215" fill="none" stroke="#a0aec0"
+                                    stroke-width="1.5" marker-end="url(#arrow)" />
+                                <path d="M 400,275 C 400,290 385,315 345,335" fill="none" stroke="#a0aec0"
+                                    stroke-width="1.5" marker-end="url(#arrow)" />
+                                <path d="M 255,335 C 215,315 200,290 200,275" fill="none" stroke="#a0aec0"
+                                    stroke-width="1.5" marker-end="url(#arrow)" />
+                                <path d="M 200,215 C 200,200 215,175 255,155" fill="none" stroke="#a0aec0"
+                                    stroke-width="1.5" marker-end="url(#arrow)" />
+
+                                <!-- Input (Far Left) -->
+                                <rect x="15" y="105" width="150" height="50" rx="6" fill="#f8fafc" stroke="#475569"
+                                    stroke-width="1.5" filter="url(#shadow)" />
+                                <text x="90" y="127" font-family="var(--font-body)" font-size="12" font-weight="bold"
+                                    fill="#3a4d63" text-anchor="middle">Industrial Task Input</text>
+                                <text x="90" y="143" font-family="var(--font-body)" font-size="9" fill="#565e6d"
+                                    text-anchor="middle">(Query, Shift logs, Images)</text>
+                                <path d="M 165,130 L 210,130" fill="none" stroke="#a0aec0" stroke-width="2"
+                                    marker-end="url(#arrow)" />
+
+                                <!-- Safety Boundaries (Far Left Bottom) -->
+                                <rect x="15" y="335" width="150" height="50" rx="6" fill="#f8fafc"
+                                    stroke="var(--accent-red)" stroke-width="1.5" filter="url(#shadow)" />
+                                <text x="90" y="357" font-family="var(--font-body)" font-size="12" font-weight="bold"
+                                    fill="var(--accent-red)" text-anchor="middle">Safety Envelope</text>
+                                <text x="90" y="373" font-family="var(--font-body)" font-size="9" fill="#565e6d"
+                                    text-anchor="middle">(LOPA, PHA Plant Limits)</text>
+                                <path d="M 165,360 L 255,275" fill="none" stroke="var(--accent-red)" stroke-width="1.5"
+                                    stroke-dasharray="2,2" marker-end="url(#arrow)" />
+
+                                <!-- Tools Stack (Far Right) -->
+                                <g transform="translate(500, 180)">
+                                    <rect x="0" y="0" width="90" height="30" rx="4" fill="#f8fafc" stroke="#5f768e"
+                                        stroke-width="1" filter="url(#shadow)" />
+                                    <text x="45" y="18" font-family="var(--font-body)" font-size="9" font-weight="bold"
+                                        fill="#3a4d63" text-anchor="middle">PI Historian Tags</text>
+
+                                    <rect x="0" y="40" width="90" height="30" rx="4" fill="#f8fafc" stroke="#6f8c80"
+                                        stroke-width="1" filter="url(#shadow)" />
+                                    <text x="45" y="58" font-family="var(--font-body)" font-size="9" font-weight="bold"
+                                        fill="#2d3748" text-anchor="middle">PSE Simulators</text>
+
+                                    <rect x="0" y="80" width="90" height="30" rx="4" fill="#f8fafc" stroke="#0055A5"
+                                        stroke-width="1" filter="url(#shadow)" />
+                                    <text x="45" y="98" font-family="var(--font-body)" font-size="9" font-weight="bold"
+                                        fill="#0055A5" text-anchor="middle">RAG EAM Manuals</text>
+                                </g>
+
+                                <!-- Bus-style Call Arrows from Act Node to Tools Stack -->
+                                <path d="M 465,245 L 482,245" fill="none" stroke="#5bb35b" stroke-width="1.5" />
+                                <path d="M 482,195 L 482,275" fill="none" stroke="#5bb35b" stroke-width="1.5" />
+                                <path d="M 482,195 L 497,195" fill="none" stroke="#5bb35b" stroke-width="1.5"
+                                    marker-end="url(#arrow)" />
+                                <path d="M 482,235 L 497,235" fill="none" stroke="#5bb35b" stroke-width="1.5"
+                                    marker-end="url(#arrow)" />
+                                <path d="M 482,275 L 497,275" fill="none" stroke="#5bb35b" stroke-width="1.5"
+                                    marker-end="url(#arrow)" />
+
+                                <!-- Output (Far Right Bottom) -->
+                                <rect x="435" y="335" width="150" height="50" rx="6" fill="#f8fafc" stroke="#5bb35b"
+                                    stroke-width="1.5" filter="url(#shadow)" />
+                                <text x="510" y="357" font-family="var(--font-body)" font-size="12" font-weight="bold"
+                                    fill="#22543d" text-anchor="middle">Validated Setpoint</text>
+                                <text x="510" y="373" font-family="var(--font-body)" font-size="9" fill="#565e6d"
+                                    text-anchor="middle">(Downstream DCS Action)</text>
+                                <path d="M 380,360 L 425,360" fill="none" stroke="#5bb35b" stroke-width="2"
+                                    marker-end="url(#arrow)" />
                             </svg>
                         </div>
                     </div>
@@ -4420,8 +4855,7 @@
                         style="font-size: 78px; margin-bottom:15px;">Thank You!</h1>
                     <p class="title-slide-subtitle reveal editable" id="text-s24-subtitle"
                         style="font-size: 26px; max-width:1100px; margin-bottom: 30px;">
-                        Let's discuss how GenAI can bridge the gap between unstructured plant operations and established
-                        Process Systems Engineering workflows.
+                        Questions.
                     </p>
 
                     <div class="grid-3col reveal" style="gap:24px; max-width:1200px; width:100%;">
@@ -4584,7 +5018,7 @@
             setupPageInput() {
                 const pageNumEl = document.getElementById('pageNum');
                 if (!pageNumEl) return;
-                
+
                 // Allow direct editing of the page number
                 pageNumEl.addEventListener('focus', () => {
                     // Select all text on focus so user can type immediately
@@ -4594,14 +5028,14 @@
                     selection.removeAllRanges();
                     selection.addRange(range);
                 });
-                
+
                 pageNumEl.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
                         pageNumEl.blur();
                     }
                 });
-                
+
                 pageNumEl.addEventListener('blur', () => {
                     const val = parseInt(pageNumEl.textContent.trim(), 10);
                     if (!isNaN(val) && val >= 1 && val <= this.slides.length) {
@@ -4659,8 +5093,8 @@
 
                 document.getElementById('resetLayoutBtn').addEventListener('click', () => {
                     if (confirm('Are you sure you want to restore defaults and clear custom sizes and text?')) {
-                        localStorage.removeItem('fipse_slide_sizes_v17');
-                        localStorage.removeItem('fipse_slide_texts_v17');
+                        localStorage.removeItem('fipse_slide_sizes_v23');
+                        localStorage.removeItem('fipse_slide_texts_v23');
                         location.reload();
                     }
                 });
@@ -4672,7 +5106,7 @@
                 // Watch resizes of .resizable elements in real-time
                 const ro = new ResizeObserver(entries => {
                     if (!document.body.classList.contains('edit-mode')) return;
-                    let sizes = JSON.parse(localStorage.getItem('fipse_slide_sizes_v17') || '{}');
+                    let sizes = JSON.parse(localStorage.getItem('fipse_slide_sizes_v23') || '{}');
                     for (let entry of entries) {
                         const id = entry.target.id;
                         if (id) {
@@ -4682,7 +5116,7 @@
                             };
                         }
                     }
-                    localStorage.setItem('fipse_slide_sizes_v17', JSON.stringify(sizes));
+                    localStorage.setItem('fipse_slide_sizes_v23', JSON.stringify(sizes));
                 });
 
                 document.querySelectorAll('.resizable').forEach(el => ro.observe(el));
@@ -4690,10 +5124,10 @@
                 // Save text blur edits
                 document.querySelectorAll('.editable').forEach(el => {
                     el.addEventListener('blur', () => {
-                        let texts = JSON.parse(localStorage.getItem('fipse_slide_texts_v17') || '{}');
+                        let texts = JSON.parse(localStorage.getItem('fipse_slide_texts_v23') || '{}');
                         if (el.id) {
                             texts[el.id] = el.innerHTML;
-                            localStorage.setItem('fipse_slide_texts_v17', JSON.stringify(texts));
+                            localStorage.setItem('fipse_slide_texts_v23', JSON.stringify(texts));
                         }
                     });
                 });
@@ -4701,14 +5135,14 @@
 
             saveEdits() {
                 // Texts are auto-saved on blur, but we also run an explicit sweep
-                let texts = JSON.parse(localStorage.getItem('fipse_slide_texts_v17') || '{}');
+                let texts = JSON.parse(localStorage.getItem('fipse_slide_texts_v23') || '{}');
                 document.querySelectorAll('.editable').forEach(el => {
                     if (el.id) texts[el.id] = el.innerHTML;
                 });
-                localStorage.setItem('fipse_slide_texts_v17', JSON.stringify(texts));
+                localStorage.setItem('fipse_slide_texts_v23', JSON.stringify(texts));
 
                 // Sweep sizes
-                let sizes = JSON.parse(localStorage.getItem('fipse_slide_sizes_v17') || '{}');
+                let sizes = JSON.parse(localStorage.getItem('fipse_slide_sizes_v23') || '{}');
                 document.querySelectorAll('.resizable').forEach(el => {
                     if (el.id && (el.style.width || el.style.height)) {
                         sizes[el.id] = {
@@ -4717,11 +5151,11 @@
                         };
                     }
                 });
-                localStorage.setItem('fipse_slide_sizes_v17', JSON.stringify(sizes));
+                localStorage.setItem('fipse_slide_sizes_v23', JSON.stringify(sizes));
             }
 
             restoreEdits() {
-                const storedSizes = JSON.parse(localStorage.getItem('fipse_slide_sizes_v17') || '{}');
+                const storedSizes = JSON.parse(localStorage.getItem('fipse_slide_sizes_v23') || '{}');
                 Object.keys(storedSizes).forEach(id => {
                     const el = document.getElementById(id);
                     if (el) {
@@ -4730,7 +5164,7 @@
                     }
                 });
 
-                const storedTexts = JSON.parse(localStorage.getItem('fipse_slide_texts_v17') || '{}');
+                const storedTexts = JSON.parse(localStorage.getItem('fipse_slide_texts_v23') || '{}');
                 Object.keys(storedTexts).forEach(id => {
                     const el = document.getElementById(id);
                     if (el) {
